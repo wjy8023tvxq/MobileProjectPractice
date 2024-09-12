@@ -1,7 +1,7 @@
 
-# Server Time Display App
+# Server Time Display Expo App
 
-This React Native application allows users to select a time zone and view the current server time in that time zone. The app interacts with a custom API (based on **node-mysql** or any user-provided API) to fetch the current time, and it formats the time to show the exact current time in the user's selected time zone. The key feature of this app is its ability to accurately reflect time zone differences using **GMT offsets**, ensuring that daylight saving time and time zone variations are handled correctly. The application dynamically updates the time when the user selects a different time zone.
+This React Native (Expo) application allows users to select a time zone and view the current server time in that time zone. The app interacts with a custom API (based on **node-mysql** or any user-provided API) to fetch the current time, and it formats the time to show the exact current time in the user's selected time zone. The key feature of this app is its ability to accurately reflect time zone differences using **GMT offsets**, ensuring that daylight saving time and time zone variations are handled correctly. The application dynamically updates the time when the user selects a different time zone.
 
 **Note:** The API used to fetch the server time is from the `node-api-postman` directory located in the following repository: [MobileProjectPractice](https://github.com/wjy8023tvxq/MobileProjectPractice.git). Ensure the API server is running locally for the React application to work.
 
