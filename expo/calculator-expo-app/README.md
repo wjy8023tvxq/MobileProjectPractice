@@ -1,9 +1,9 @@
 
-# **Calculator App - React Native (Expo)**
+# **Calculator Expo App**
 
 ## **Project Overview**
 
-This is a **Calculator App** built using **React Native** and **Expo**. It is designed to simulate the functionality of a basic calculator, allowing users to perform standard arithmetic operations such as addition, subtraction, multiplication, and division. The app features custom input validation, operator precedence handling, and a clean user interface. The calculations are handled without relying on the `eval()` function, ensuring a secure and efficient solution.
+This is a Calculator App built using **React Native** and **Expo**. It is designed to simulate the functionality of a basic calculator, allowing users to perform standard arithmetic operations such as addition, subtraction, multiplication, and division. The app features custom input validation, operator precedence handling, and a clean user interface. The calculations are handled without relying on the `eval()` function, ensuring a secure and efficient solution.
 
 ## **Features**
 
