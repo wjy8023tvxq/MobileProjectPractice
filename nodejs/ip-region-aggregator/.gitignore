@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+test/
+aggregated_ips_by_region.txt
+CN-suip.biz.txt
+mapping_data.csv
+geo_data.json

@@ -1,0 +1,67 @@
+/* General styles for the container */
+.upload-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  /* Heading style */
+  .upload-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Style for the input type file */
+  .upload-container input[type="file"] {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  /* Style for the submit button */
+  .upload-container button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Hover effect for submit button */
+  .upload-container button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Message style */
+  .upload-container p {
+    text-align: center;
+    font-size: 16px;
+    color: #ff0000;
+    margin-top: 15px;
+  }
+  
+  /* Success message style */
+  .upload-container p.success {
+    color: #28a745;
+  }
+  
+  /* Error message style */
+  .upload-container p.error {
+    color: #dc3545;
+  }
+  

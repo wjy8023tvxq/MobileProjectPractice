@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App-header {
+  background-color: #add8e6;
+  padding: 20px;
+  color: white;
+  border-radius: 8px;
+}
+
+p {
+  font-size: 1.2em;
+}
+
