@@ -1,5 +1,5 @@
 
-# DB CRUD App
+# Database CRUD React App
 
 This is a simple React-based CRUD (Create, Read, Update, Delete) application that interacts with a backend API to manage user data.
 
