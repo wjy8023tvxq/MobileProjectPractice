@@ -43,7 +43,3 @@ This repository contains multiple projects focusing on mobile and web developmen
    ```
 
 Each project folder contains its own `README.md` with specific instructions on running the project.
-
-## License
-
-This project is licensed under the MIT License.
