@@ -1,5 +1,5 @@
 
-# Calendar App
+# Calendar React App
 
 ## Overview
 

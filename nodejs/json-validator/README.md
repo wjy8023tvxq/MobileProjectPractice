@@ -1,5 +1,5 @@
 
-# JSON Validator CLI
+# JSON Validator
 
 This project is a simple Node.js command-line tool to validate whether a given file contains valid JSON.
 

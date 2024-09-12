@@ -1,5 +1,5 @@
 
-# **Server Time React Application**
+# **Server Time React App**
 
 ## **Project Overview**
 

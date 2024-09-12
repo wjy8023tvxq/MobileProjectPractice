@@ -1,7 +1,7 @@
 
-# **Calendar App**
+# **Calendar Expo App**
 
-A **cross-platform calendar application** built using **React Native** and **Expo**, with support for **web**, **iOS**, and **Android** platforms. This app allows users to select and mark dates on a calendar and uses platform-specific date pickers for enhanced date selection. All date operations are managed in **UTC** using **moment.js** to ensure consistent behavior across different time zones.
+A cross-platform calendar application built using **React Native** and **Expo**, with support for **web**, **iOS**, and **Android** platforms. This app allows users to select and mark dates on a calendar and uses platform-specific date pickers for enhanced date selection. All date operations are managed in **UTC** using **moment.js** to ensure consistent behavior across different time zones.
 
 ---
 

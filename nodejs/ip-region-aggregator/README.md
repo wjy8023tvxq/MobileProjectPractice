@@ -1,5 +1,5 @@
 
-# IP Geolocation Aggregator
+# IP Region Aggregator
 
 This project processes IP logs to retrieve geolocation information, aggregates IPs by region, and outputs data for further mapping and analysis. The geolocation data is retrieved using the `fast-geoip` package, and results can be exported in different formats like JSON and CSV for ease of visualization.
 
