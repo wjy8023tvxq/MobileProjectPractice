@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import CalculatorButton from "./components/CalculatorButton";
 
 export default function App() {
@@ -11,8 +12,11 @@ export default function App() {
   const isValidInput = (value) => {
     // Prevent consecutive operators
     const lastChar = input.slice(-1);
-    if (['+', '-', '*', '/'].includes(lastChar) && ['+', '-', '*', '/'].includes(value)) {
-        return false;
+    if (
+      ["+", "-", "*", "/"].includes(lastChar) &&
+      ["+", "-", "*", "/"].includes(value)
+    ) {
+      return false;
     }
     // // Prevent multiple decimals
     if (value === ".") {
@@ -23,7 +27,7 @@ export default function App() {
       }
     }
     return true;
-};
+  };
 
   const calculateResult = () => {
     try {
@@ -32,7 +36,7 @@ export default function App() {
       setResult(formattedResult.toString());
       setIsResultShown(true);
     } catch (error) {
-      setResult(error);
+      setResult("Error");
     }
   };
 
@@ -101,9 +105,9 @@ export default function App() {
   const handlePress = (value) => {
     // If result is shown and a number is pressed, clear input and start new calculation
     if (isResultShown && !isNaN(value)) {
-      setInput(value); 
-      setResult(""); 
-      setIsResultShown(false); 
+      setInput(value);
+      setResult("");
+      setIsResultShown(false);
     } else if (value === "C") {
       // If 'C' is pressed, clear both input and result
       setInput("");
@@ -120,59 +124,50 @@ export default function App() {
     }
   };
   return (
-    <View style={styles.container}>
-      {/* Display the result or current input */}
-      <Text style={styles.resultText}>{result ? result : input}</Text>
-
-      {/* Calculator button layout */}
-      <View style={styles.buttonContainer}>
-        <View style={styles.row}>
-          <CalculatorButton value="C" onPress={handlePress} flexValue={1} />
-          <CalculatorButton value="←" onPress={handlePress} flexValue={1} />
-          <View style={styles.blankButton} /> {/* Blank position */}
-          <CalculatorButton value="/" onPress={handlePress} flexValue={1} />
-        </View>
-        <View style={styles.row}>
-          {["7", "8", "9", "*"].map((value) => (
-            <CalculatorButton
-              key={value}
-              value={value}
-              onPress={handlePress}
-              flexValue={1}
-            />
+    <SafeAreaView style={styles.safeArea}>
+      <View style={styles.container}>
+        {/* Display the result or current input */}
+        <Text style={styles.resultText}>{result || input || " "}</Text>
+        {/* Calculator button view */}
+        <View style={styles.buttonContainer}>
+          <View style={styles.row}>
+            <CalculatorButton value="C" onPress={handlePress} flexValue={1} />
+            <CalculatorButton value="←" onPress={handlePress} flexValue={1} />
+            <View style={styles.blankButton} />
+            <CalculatorButton value="/" onPress={handlePress} flexValue={1} />
+          </View>
+          {[
+            ["7", "8", "9", "*"],
+            ["4", "5", "6", "-"],
+            ["1", "2", "3", "+"],
+          ].map((row, index) => (
+            <View key={index} style={styles.row}>
+              {row.map((value) => (
+                <CalculatorButton
+                  key={value}
+                  value={value}
+                  onPress={handlePress}
+                  flexValue={1}
+                />
+              ))}
+            </View>
           ))}
-        </View>
-        <View style={styles.row}>
-          {["4", "5", "6", "-"].map((value) => (
-            <CalculatorButton
-              key={value}
-              value={value}
-              onPress={handlePress}
-              flexValue={1}
-            />
-          ))}
-        </View>
-        <View style={styles.row}>
-          {["1", "2", "3", "+"].map((value) => (
-            <CalculatorButton
-              key={value}
-              value={value}
-              onPress={handlePress}
-              flexValue={1}
-            />
-          ))}
-        </View>
-        <View style={styles.row}>
-          <CalculatorButton value="0" onPress={handlePress} flexValue={2.1} />
-          <CalculatorButton value="." onPress={handlePress} flexValue={1} />
-          <CalculatorButton value="=" onPress={handlePress} flexValue={1} />
+          <View style={styles.row}>
+            <CalculatorButton value="0" onPress={handlePress} flexValue={2.1} />
+            <CalculatorButton value="." onPress={handlePress} flexValue={1} />
+            <CalculatorButton value="=" onPress={handlePress} flexValue={1} />
+          </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#f5f5f5",
+  },
   container: {
     flex: 1,
     justifyContent: "center",
