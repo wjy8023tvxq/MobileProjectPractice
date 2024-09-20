@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import CalculatorButton from "./components/CalculatorButton";
 
 export default function App() {
@@ -124,42 +124,48 @@ export default function App() {
     }
   };
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        {/* Display the result or current input */}
-        <Text style={styles.resultText}>{result || input || " "}</Text>
-        {/* Calculator button view */}
-        <View style={styles.buttonContainer}>
-          <View style={styles.row}>
-            <CalculatorButton value="C" onPress={handlePress} flexValue={1} />
-            <CalculatorButton value="←" onPress={handlePress} flexValue={1} />
-            <View style={styles.blankButton} />
-            <CalculatorButton value="/" onPress={handlePress} flexValue={1} />
-          </View>
-          {[
-            ["7", "8", "9", "*"],
-            ["4", "5", "6", "-"],
-            ["1", "2", "3", "+"],
-          ].map((row, index) => (
-            <View key={index} style={styles.row}>
-              {row.map((value) => (
-                <CalculatorButton
-                  key={value}
-                  value={value}
-                  onPress={handlePress}
-                  flexValue={1}
-                />
-              ))}
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.safeArea}>
+        <View style={styles.container}>
+          {/* Display the result or current input */}
+          <Text style={styles.resultText}>{result || input || " "}</Text>
+          {/* Calculator button view */}
+          <View style={styles.buttonContainer}>
+            <View style={styles.row}>
+              <CalculatorButton value="C" onPress={handlePress} flexValue={1} />
+              <CalculatorButton value="←" onPress={handlePress} flexValue={1} />
+              <View style={styles.blankButton} />
+              <CalculatorButton value="/" onPress={handlePress} flexValue={1} />
             </View>
-          ))}
-          <View style={styles.row}>
-            <CalculatorButton value="0" onPress={handlePress} flexValue={2.1} />
-            <CalculatorButton value="." onPress={handlePress} flexValue={1} />
-            <CalculatorButton value="=" onPress={handlePress} flexValue={1} />
+            {[
+              ["7", "8", "9", "*"],
+              ["4", "5", "6", "-"],
+              ["1", "2", "3", "+"],
+            ].map((row, index) => (
+              <View key={index} style={styles.row}>
+                {row.map((value) => (
+                  <CalculatorButton
+                    key={value}
+                    value={value}
+                    onPress={handlePress}
+                    flexValue={1}
+                  />
+                ))}
+              </View>
+            ))}
+            <View style={styles.row}>
+              <CalculatorButton
+                value="0"
+                onPress={handlePress}
+                flexValue={2.1}
+              />
+              <CalculatorButton value="." onPress={handlePress} flexValue={1} />
+              <CalculatorButton value="=" onPress={handlePress} flexValue={1} />
+            </View>
           </View>
         </View>
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
